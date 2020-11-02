@@ -20,24 +20,24 @@
         
          <script>
              async function convert() {
-                document.getElementById("loader").style.display="block"; //show loader
-                document.getElementById("btnText").style.display="none"; // hide text
+                const loader = document.getElementById("loader");
+                const btnText = document.getElementById("btnText");
+                loader.style.display="block"; //show loader
+                btnText.style.display="none"; // hide text
                  
                 try{
                 response = await fetch(`https://latex-parser.herokuapp.com/?latex=${encodeURIComponent(document.getElementById("input").value)}`); // make api request
-                    document.getElementById("loader").style.display="none"; // end loading animation
-                    document.getElementById("btnText").style.display="block"; // show text
+                    loader.style.display="none"; // end loading animation
+                    btnText.style.display="block"; // show text
                 }
                 catch(err){
-                    document.getElementById("loader").style.display="none"; //end loading animation
-                    document.getElementById("btnText").style.display="block"; // show text
+                    loader.style.display="none"; //end loading animation
+                    btnText.style.display="block"; // show text
                     window.alert("Error");
              }
                  
                 response.json().then( data => {
                     document.getElementById("output").value = data.text; // print respose
-                    
-                    
                 })
              }
         </script> 
