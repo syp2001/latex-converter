@@ -1,0 +1,45 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    </head>
+    <body>
+        <div class="header"><h1>Latex Converter</h1></div>
+        <section class="container">
+            <label for="input">Latex Input</label>
+            <textarea id="input" name="latex" cols="40" rows="4"></textarea>
+            <button onClick="convert()">
+                <span id="loader"><i class="fa fa-spinner fa-spin"></i> Converting</span>
+                <span id="btnText">Convert</span>
+            </button>
+            <label for="output">Text Output</label>
+            <textarea id="output" cols="40" rows="4"></textarea>
+        </section>
+        
+         <script>
+             async function convert() {
+                document.getElementById("loader").style.display="block"; //show loader
+                document.getElementById("btnText").style.display="none"; // hide text
+                 
+                try{
+                response = await fetch(`https://latex-parser.herokuapp.com/?latex=${encodeURIComponent(document.getElementById("input").value)}`); // make api request
+                    document.getElementById("loader").style.display="none"; // end loading animation
+                    document.getElementById("btnText").style.display="block"; // show text
+                }
+                catch(err){
+                    document.getElementById("loader").style.display="none"; //end loading animation
+                    document.getElementById("btnText").style.display="block"; // show text
+                    window.alert("Error");
+             }
+                 
+                response.json().then( data => {
+                    document.getElementById("output").value = data.text; // print respose
+                    
+                    
+                })
+             }
+        </script> 
+    </body>
+</html>

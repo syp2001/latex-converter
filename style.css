@@ -1,0 +1,36 @@
+html {
+    background-color: lavenderblush;
+}
+* {
+    font-family: arial;
+}
+.header {
+    padding: 10px;
+}
+.container {
+    width: 840px;
+    margin: 0px auto;
+}
+textarea {
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: lavender;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 5px gray;
+    font-size: 1.5em;
+}
+button{
+    margin: 10px auto;
+    outline: none;
+    border: none;
+    background-color: mediumpurple;
+    color: white;
+    border-radius: 3px;
+    padding: 10px;
+    display:block;
+}
+#loader {
+    display: none;
+}
