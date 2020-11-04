@@ -26,7 +26,7 @@
                 btnText.style.display="none"; // hide text
                  
                 try{
-                response = await fetch(`https://latex-parser.herokuapp.com/?latex=${encodeURIComponent(document.getElementById("input").value)}`); // make api request
+                response = await fetch(`https://latex.seyongpark.me/api?latex=${encodeURIComponent(document.getElementById("input").value)}`); // make api request
                     loader.style.display="none"; // end loading animation
                     btnText.style.display="block"; // show text
                 }
