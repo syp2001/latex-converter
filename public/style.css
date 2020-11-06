@@ -20,6 +20,7 @@ textarea {
     border-radius: 10px;
     box-shadow: 3px 3px 5px gray;
     font-size: 1.5em;
+    resize: none;
 }
 button{
     margin: 10px auto;
