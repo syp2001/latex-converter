@@ -19,10 +19,11 @@
         </section>
         
          <script>
-		document.getElementById("convertBtn").addEventListener("click",convert);
+	     document.getElementById("convertBtn").addEventListener("click",convert); // run convert on button click
+
              async function convert() {
-                const loader = document.getElementById("loader");
-                const btnText = document.getElementById("btnText");
+                const loader = document.getElementById("loader"); // get loading icon
+                const btnText = document.getElementById("btnText"); // get text inside button
                 loader.style.display="block"; //show loader
                 btnText.style.display="none"; // hide text
                  
