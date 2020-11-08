@@ -10,7 +10,7 @@
         <section class="container">
             <label for="input">Latex Input</label>
             <textarea id="input" name="latex" cols="40" rows="4" spellcheck="false"></textarea>
-            <button onClick="convert()">
+	    <button id="convertBtn">
                 <span id="loader"><i class="fa fa-spinner fa-spin"></i> Converting</span>
                 <span id="btnText">Convert</span>
             </button>
@@ -19,6 +19,7 @@
         </section>
         
          <script>
+		document.getElementById("convertBtn").addEventListener("click",convert);
              async function convert() {
                 const loader = document.getElementById("loader");
                 const btnText = document.getElementById("btnText");
